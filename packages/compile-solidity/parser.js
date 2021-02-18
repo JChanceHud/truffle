@@ -58,6 +58,7 @@ module.exports = {
           const matches = message.match(/Source[^'"]?.*?("|')([^'"]+)("|')/);
           if (matches) {
             // Extract the full path by matching against body with the import filename
+            console.log(matches)
             const fullPathRegex = new RegExp(`("|')(.*${matches[2]})("|')`);
             const importMatches = body.match(fullPathRegex);
             if (importMatches) return importMatches[2];
